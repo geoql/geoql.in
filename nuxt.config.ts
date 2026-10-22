@@ -80,6 +80,7 @@ export default defineNuxtConfig({
         compatibility_date: COMPATIBILITY_DATE,
         workers_dev: true,
         preview_urls: false,
+        routes: [{ pattern: 'geoql.in', custom_domain: true }],
         observability: { enabled: true },
       },
     },
