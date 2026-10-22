@@ -1,4 +1,4 @@
-export type SectionId = 'maps' | 'quality' | 'agents' | 'demos' | 'internal';
+export type SectionId = 'maps' | 'quality' | 'agents' | 'demos';
 
 export interface Project {
   /** Display name. */
@@ -16,8 +16,6 @@ export interface Section {
   title: string;
   /** Short serif-italic gloss shown beside the title. */
   gloss: string;
-  /** Internal tools: muted, compact, marked as sign-in required. */
-  internal?: boolean;
   projects: Project[];
 }
 
@@ -115,46 +113,21 @@ export const SECTIONS: Section[] = [
       },
     ],
   },
-  {
-    id: 'internal',
-    title: 'Internal',
-    gloss: 'self-hosted tools that run this estate',
-    internal: true,
-    projects: [
-      {
-        name: 'Plausible',
-        url: 'https://analytics.geoql.in',
-        description: 'Web analytics',
-      },
-      {
-        name: 'OpenPanel',
-        url: 'https://events.geoql.in',
-        description: 'Product analytics',
-      },
-      {
-        name: 'Canonry',
-        url: 'https://aeo.geoql.in',
-        description: 'Answer-engine visibility',
-      },
-      {
-        name: 'Wakapi',
-        url: 'https://wakapi.geoql.in',
-        description: 'Coding time stats',
-      },
-      {
-        name: 'Vaultwarden',
-        url: 'https://vault.geoql.in',
-        description: 'Password vault',
-      },
-    ],
-  },
 ];
 
-export const PUBLIC_SECTIONS = SECTIONS.filter((section) => !section.internal);
+/**
+ * Self-hosted infrastructure never appears on this page, in llms.txt or in
+ * structured data. tests/unit/projects.test.ts enforces this list.
+ */
+export const PRIVATE_HOSTS = [
+  'analytics.geoql.in',
+  'events.geoql.in',
+  'aeo.geoql.in',
+  'wakapi.geoql.in',
+  'vault.geoql.in',
+] as const;
 
-export const PUBLIC_PROJECTS = PUBLIC_SECTIONS.flatMap(
-  (section) => section.projects,
-);
+export const PROJECTS = SECTIONS.flatMap((section) => section.projects);
 
 export function hostOf(url: string): string {
   return new URL(url).host;

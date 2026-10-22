@@ -1,4 +1,4 @@
-import { PUBLIC_PROJECTS } from '../data/projects';
+import { PROJECTS } from '../data/projects';
 import { SITE } from '../data/site';
 
 /** Organization + WebSite + ItemList of the public projects, as one graph. */
@@ -34,8 +34,8 @@ export function structuredData() {
         '@type': 'ItemList',
         '@id': `${SITE.url}/#projects`,
         name: 'GeoQL projects',
-        numberOfItems: PUBLIC_PROJECTS.length,
-        itemListElement: PUBLIC_PROJECTS.map((project, i) => ({
+        numberOfItems: PROJECTS.length,
+        itemListElement: PROJECTS.map((project, i) => ({
           '@type': 'ListItem',
           position: i + 1,
           url: project.url,

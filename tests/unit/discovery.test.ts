@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { PUBLIC_PROJECTS, SECTIONS } from '../../app/data/projects';
+import { PRIVATE_HOSTS, PROJECTS } from '../../app/data/projects';
 import { structuredData } from '../../app/utils/structured-data';
 import { contourLines } from '../../app/utils/contours';
 import { llmsTxt, robotsTxt, sitemapXml } from '../../server/utils/discovery';
@@ -17,13 +17,14 @@ describe('discovery files', () => {
     expect(xml).toContain('<lastmod>2026-10-22</lastmod>');
   });
 
-  it('llms.txt names every project, internal tools marked', () => {
+  it('llms.txt names every project and no private host', () => {
     const txt = llmsTxt();
     expect(txt.startsWith('# GeoQL\n')).toBe(true);
-    for (const project of SECTIONS.flatMap((s) => s.projects)) {
+    for (const project of PROJECTS) {
       expect(txt).toContain(`](${project.url})`);
     }
-    expect(txt).toContain('## Internal (sign-in required)');
+    expect(txt).not.toContain('Internal');
+    for (const host of PRIVATE_HOSTS) expect(txt).not.toContain(host);
   });
 });
 
@@ -33,7 +34,7 @@ describe('structured data', () => {
     const types = graph.map((node) => node['@type']);
     expect(types).toEqual(['Organization', 'WebSite', 'ItemList']);
     const list = graph[2] as { itemListElement: unknown[] };
-    expect(list.itemListElement).toHaveLength(PUBLIC_PROJECTS.length);
+    expect(list.itemListElement).toHaveLength(PROJECTS.length);
   });
 });
 

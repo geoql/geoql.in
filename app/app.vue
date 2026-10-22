@@ -1,10 +1,9 @@
 <script setup lang="ts">
-  import { PUBLIC_SECTIONS, SECTIONS } from '~/data/projects';
+  import { SECTIONS } from '~/data/projects';
   import { SITE } from '~/data/site';
   import { structuredData } from '~/utils/structured-data';
 
   const PROMINENT = new Set(['maps', 'quality']);
-  const internal = SECTIONS.filter((section) => section.internal);
 
   useSeoMeta({
     title: SITE.title,
@@ -61,16 +60,11 @@
       <SiteHero />
       <div class="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
         <ProjectSection
-          v-for="(section, i) in PUBLIC_SECTIONS"
+          v-for="(section, i) in SECTIONS"
           :key="section.id"
           :section="section"
           :number="i + 1"
           :prominent="PROMINENT.has(section.id)"
-        />
-        <InternalSection
-          v-for="section in internal"
-          :key="section.id"
-          :section="section"
         />
       </div>
     </main>

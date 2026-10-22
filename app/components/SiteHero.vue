@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { PUBLIC_PROJECTS, PUBLIC_SECTIONS } from '~/data/projects';
+  import { PROJECTS, SECTIONS } from '~/data/projects';
   import { SITE } from '~/data/site';
 </script>
 
@@ -71,8 +71,8 @@
             </OutboundLink>
           </div>
           <p class="font-mono text-xs text-ink-3 tabular-nums">
-            {{ PUBLIC_PROJECTS.length }} public projects ·
-            {{ PUBLIC_SECTIONS.length }} sections · {{ SITE.tagline }}
+            {{ PROJECTS.length }} public projects ·
+            {{ SECTIONS.length }} sections · {{ SITE.tagline }}
           </p>
         </div>
       </div>

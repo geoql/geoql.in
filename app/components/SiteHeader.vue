@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { PUBLIC_SECTIONS } from '~/data/projects';
+  import { SECTIONS } from '~/data/projects';
 </script>
 
 <template>
@@ -21,7 +21,7 @@
         <ul
           class="flex items-center gap-7 font-mono text-xs whitespace-nowrap text-ink-2"
         >
-          <li v-for="(section, i) in PUBLIC_SECTIONS" :key="section.id">
+          <li v-for="(section, i) in SECTIONS" :key="section.id">
             <a
               :href="`#${section.id}`"
               class="transition-colors hover:text-ink"

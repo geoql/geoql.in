@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
-  PUBLIC_PROJECTS,
-  PUBLIC_SECTIONS,
+  PRIVATE_HOSTS,
+  PROJECTS,
   SECTIONS,
   hostOf,
 } from '../../app/data/projects';
 
 describe('project index data', () => {
-  const all = SECTIONS.flatMap((section) => section.projects);
+  const all = PROJECTS;
 
   it('uses unique section ids and unique project URLs', () => {
     const ids = SECTIONS.map((section) => section.id);
@@ -28,11 +28,9 @@ describe('project index data', () => {
     }
   });
 
-  it('keeps internal tools out of the public lists', () => {
-    expect(PUBLIC_SECTIONS.some((section) => section.internal)).toBe(false);
-    expect(
-      PUBLIC_PROJECTS.some((p) => hostOf(p.url) === 'vault.geoql.in'),
-    ).toBe(false);
+  it('never lists self-hosted infrastructure', () => {
+    const hosts = new Set(all.map((p) => hostOf(p.url)));
+    for (const host of PRIVATE_HOSTS) expect(hosts.has(host)).toBe(false);
   });
 
   it('writes descriptions as one line without a trailing period', () => {

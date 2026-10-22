@@ -32,10 +32,7 @@ export function llmsTxt(): string {
     '',
   );
   for (const section of SECTIONS) {
-    lines.push(
-      `## ${section.title}${section.internal ? ' (sign-in required)' : ''}`,
-      '',
-    );
+    lines.push(`## ${section.title}`, '');
     for (const project of section.projects) {
       const source = project.repo ? ` Source: ${project.repo}` : '';
       lines.push(
