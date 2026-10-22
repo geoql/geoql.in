@@ -1,0 +1,63 @@
+{
+  "name": "geoql.in",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GeoQL — open-source maps and code-quality tools for Vue and Nuxt",
+  "homepage": "https://geoql.in/",
+  "bugs": {
+    "url": "https://github.com/geoql/geoql.in/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoql/geoql.in.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt build && wrangler dev --config .output/server/wrangler.json",
+    "deploy": "nuxt build && wrangler deploy --config .output/server/wrangler.json",
+    "postinstall": "nuxt prepare",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "typecheck": "nuxt typecheck",
+    "test": "vp test run",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@nuxt/scripts": "catalog:",
+    "@nuxtjs/color-mode": "catalog:",
+    "@openpanel/nuxt": "catalog:",
+    "nuxt": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite-plus": "catalog:",
+    "vue-tsc": "catalog:",
+    "wrangler": "catalog:"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=26.12.1"
+    }
+  },
+  "packageManager": "pnpm@12.15.0+sha512.b3951d6d6ff4a9f13dc7cf56cd28d2b8eb37dbcc9c68e52e1e1191873ea9f82a017287ab50baadc5ccc494f036c67c0e47eb13608c2fa36f47711b61ea128e61"
+}
