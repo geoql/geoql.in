@@ -106,11 +106,6 @@ export const SECTIONS: Section[] = [
         description: 'Find restaurants nearby',
         repo: 'https://github.com/geoql/restaurants',
       },
-      {
-        name: 'expenses',
-        url: 'https://expenses.geoql.in',
-        description: 'Map your expenses',
-      },
     ],
   },
 ];
