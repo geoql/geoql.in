@@ -11,7 +11,7 @@ GeoQL — open-source maps and code-quality tools for Vue and Nuxt.
 - Nuxt 4 on Cloudflare Workers (`cloudflare_module` preset, Worker `geoql-in`)
 - Tailwind CSS v4 with OKLCH tokens in `app/assets/css/main.css`
 - `@nuxtjs/color-mode` (cookie-backed) for the theme — never VueUse `useDark`
-- Analytics: GA4, Plausible (analytics.geoql.in) and OpenPanel (events.geoql.in)
+- Analytics: GA4, Plausible and OpenPanel
 - oxlint, oxfmt, vue-tsc, vite-plus (`vp test`)
 
 ## Edit the index
