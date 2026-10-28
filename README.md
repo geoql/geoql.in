@@ -1,5 +1,7 @@
 # geoql.in
 
+**[Live site](https://geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in)**
+
 The one-page index of every GeoQL project and demo: [geoql.in](https://geoql.in).
 
 GeoQL — open-source maps and code-quality tools for Vue and Nuxt.
@@ -31,6 +33,17 @@ The page, JSON-LD, and `/llms.txt` render from it.
 | `pnpm deploy`       | build, then `wrangler deploy`              |
 
 Node `>=26.12.1` and pnpm 12 (from `packageManager`).
+
+## More from the author
+
+- [v-maplibre](https://v-maplibre.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — Vue 3 MapLibre GL components
+- [mapcn-vue](https://mapcn-vue.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — shadcn-vue map components (MapLibre)
+- [nxui](https://nxui.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — Vue port of Paper Shaders + animated components (shadcn-vue registry)
+- [the-doctor.report](https://the-doctor.report?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — Vue/Nuxt code health auditor
+- [tileserver.app](https://tileserver.app?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — Rust tile server
+- [mdr](https://mdr.geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) — persistent memory for AI coding agents
+
+See every project at [vinayakkulkarni.dev/projects](https://vinayakkulkarni.dev/projects?utm_source=github&utm_medium=readme&utm_campaign=geoql.in) and [geoql.in](https://geoql.in?utm_source=github&utm_medium=readme&utm_campaign=geoql.in).
 
 ## License
 
